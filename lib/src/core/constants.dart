@@ -13,6 +13,7 @@ class Constants {
   static String testFronEnd = " TESTE FRONT-END";
   static String name = "NOME";
   static String heroName = "Nome do Personagem";
+  static String notFound = "Nenhum personagem encontrado :(";
 
   static String robotoBlack = "RobotoBlack";
   static String robotoLight = "RobotoLight";

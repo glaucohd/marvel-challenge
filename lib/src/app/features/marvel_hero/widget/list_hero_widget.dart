@@ -34,22 +34,34 @@ class _ListHeroWidgetState extends State<ListHeroWidget> {
               ),
             )
           : Expanded(
-              child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: hero.listCharacters?.length ?? 0,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      controller.navigateGotoDetailPage(
-                          context: context, hero: hero.listCharacters![index]);
-                    },
-                    child: CharacterWidget(
-                      index: index,
-                      listHero: hero.listCharacters ?? [],
+              child: hero.listCharacters!.isEmpty
+                  ? Center(
+                      child: Text(
+                        Constants.notFound,
+                        style: TextStyle(
+                          color: Constants.kRed,
+                          fontSize: 16,
+                          fontFamily: Constants.robotoRegular,
+                        ),
+                      ),
+                    )
+                  : ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: hero.listCharacters?.length ?? 0,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            controller.navigateGotoDetailPage(
+                                context: context,
+                                hero: hero.listCharacters![index]);
+                          },
+                          child: CharacterWidget(
+                            index: index,
+                            listHero: hero.listCharacters ?? [],
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
             );
     });
   }
