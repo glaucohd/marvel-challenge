@@ -19,15 +19,18 @@ class MarvelHeroController extends ChangeNotifier {
   int currentPage = 1;
   int groupStart = 0;
   int groupEnd = 0;
+  bool isLoading = false;
 
   MarvelHeroController({
     required this.getListCharacters,
   });
 
   Future<void> init() async {
+    isLoading = true;
     final dataEntity = await getListCharacters(numberPage: 0);
     heroVO = dataEntityToVO(dataEntity: dataEntity);
     totalPages = ((heroVO.total ?? 0) / 4).ceil();
+    isLoading = false;
     notifyListeners();
   }
 
@@ -85,7 +88,10 @@ class MarvelHeroController extends ChangeNotifier {
   }
 
   Future<void> getHeroByOffset({required int numberPage}) async {
+    isLoading = true;
+    notifyListeners();
     final offset = numberPage - 1;
+
     DataEntity dataEntity = DataEntity();
 
     var letterHero = textController.text;
@@ -102,6 +108,7 @@ class MarvelHeroController extends ChangeNotifier {
 
     heroVO = dataEntityToVO(dataEntity: dataEntity);
     totalPages = ((heroVO.total ?? 0) / 4).ceil();
+    isLoading = false;
     notifyListeners();
   }
 

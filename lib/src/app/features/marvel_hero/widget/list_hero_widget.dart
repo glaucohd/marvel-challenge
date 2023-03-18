@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marvel_challenge/src/app/features/marvel_hero/widget/character_widget.dart';
+import 'package:marvel_challenge/src/core/constants.dart';
 import 'package:provider/provider.dart';
 
 import '../controllers/marvel_hero_controller.dart';
@@ -18,24 +19,38 @@ class _ListHeroWidgetState extends State<ListHeroWidget> {
         builder: (context, controller, child) {
       final hero = controller.heroVO;
 
-      return Expanded(
-        child: ListView.builder(
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: hero.listCharacters?.length ?? 0,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                controller.navigateGotoDetailPage(
-                    context: context, hero: hero.listCharacters![index]);
-              },
-              child: CharacterWidget(
-                index: index,
-                listHero: hero.listCharacters ?? [],
+      return controller.isLoading != false
+          ? Expanded(
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircularProgressIndicator(
+                      color: Constants.kRed,
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : Expanded(
+              child: ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: hero.listCharacters?.length ?? 0,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      controller.navigateGotoDetailPage(
+                          context: context, hero: hero.listCharacters![index]);
+                    },
+                    child: CharacterWidget(
+                      index: index,
+                      listHero: hero.listCharacters ?? [],
+                    ),
+                  );
+                },
               ),
             );
-          },
-        ),
-      );
     });
   }
 }

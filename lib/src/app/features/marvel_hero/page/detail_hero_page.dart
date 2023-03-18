@@ -16,6 +16,7 @@ class DetailHeroPage extends StatelessWidget {
       return Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Constants.kRed,
           title: Text(
             controller.detailHero.name ?? "-",
