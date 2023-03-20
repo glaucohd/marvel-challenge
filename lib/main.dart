@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 import 'src/app/features/marvel_hero/controllers/marvel_hero_controller.dart';
 import 'src/data/datasources/characters_datasource_impl.dart';
 import 'src/data/repositories/characters_repository_impl.dart';
-import 'src/domain/usecases/characters_usecase.dart';
+import 'src/domain/usecases/get_characters_usecase_impl.dart';
 
 void main() {
   runApp(
@@ -16,7 +16,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (_) => MarvelHeroController(
-            getListCharacters: CharactersUsecase(
+            getListCharacters: GetCharactersUsecaseImpl(
               repository: CharactersRepositoryImpl(
                 datasource: CharactersDatasourceImpl(
                   client: http.Client(),

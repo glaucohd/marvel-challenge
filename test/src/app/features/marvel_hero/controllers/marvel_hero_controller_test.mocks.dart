@@ -12,7 +12,7 @@ import 'package:marvel_challenge/src/app/features/marvel_hero/controllers/marvel
 import 'package:marvel_challenge/src/app/features/marvel_hero/vo/hero_vo.dart'
     as _i3;
 import 'package:marvel_challenge/src/domain/entities/data_entity.dart' as _i7;
-import 'package:marvel_challenge/src/domain/usecases/characters_usecase.dart'
+import 'package:marvel_challenge/src/domain/usecases/get_characters_usecase.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -27,9 +27,9 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeCharactersUsecase_0 extends _i1.SmartFake
-    implements _i2.CharactersUsecase {
-  _FakeCharactersUsecase_0(
+class _FakeGetCharactersUseCase_0 extends _i1.SmartFake
+    implements _i2.GetCharactersUseCase {
+  _FakeGetCharactersUseCase_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -79,13 +79,13 @@ class MockMarvelHeroController extends _i1.Mock
   }
 
   @override
-  _i2.CharactersUsecase get getListCharacters => (super.noSuchMethod(
+  _i2.GetCharactersUseCase get getListCharacters => (super.noSuchMethod(
         Invocation.getter(#getListCharacters),
-        returnValue: _FakeCharactersUsecase_0(
+        returnValue: _FakeGetCharactersUseCase_0(
           this,
           Invocation.getter(#getListCharacters),
         ),
-      ) as _i2.CharactersUsecase);
+      ) as _i2.GetCharactersUseCase);
   @override
   _i3.HeroVO get heroVO => (super.noSuchMethod(
         Invocation.getter(#heroVO),

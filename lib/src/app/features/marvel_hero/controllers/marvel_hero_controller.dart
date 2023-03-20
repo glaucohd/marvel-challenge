@@ -3,11 +3,12 @@ import '../../../../core/routes.dart';
 import '../../../../domain/entities/characters_entity.dart';
 import '../../../../domain/entities/data_entity.dart';
 import '../../../../domain/entities/thumbnail_entity.dart';
-import '../../../../domain/usecases/characters_usecase.dart';
+
+import '../../../../domain/usecases/get_characters_usecase.dart';
 import '../vo/hero_vo.dart';
 
 class MarvelHeroController extends ChangeNotifier {
-  final CharactersUsecase getListCharacters;
+  final GetCharactersUseCase getListCharacters;
 
   HeroVO heroVO = HeroVO();
   CharactersVO detailHero = CharactersVO();

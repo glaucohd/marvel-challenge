@@ -1,11 +1,13 @@
 import 'package:marvel_challenge/src/domain/entities/data_entity.dart';
 
 import '../repositories/characters_repository.dart';
+import 'get_characters_usecase.dart';
 
-class CharactersUsecase {
+class GetCharactersUsecaseImpl implements GetCharactersUseCase {
   final CharactersRepository repository;
-  CharactersUsecase({required this.repository});
+  GetCharactersUsecaseImpl({required this.repository});
 
+  @override
   Future<DataEntity> call({
     String? name,
     int? numberPage,

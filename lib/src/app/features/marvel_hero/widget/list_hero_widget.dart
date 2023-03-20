@@ -49,16 +49,9 @@ class _ListHeroWidgetState extends State<ListHeroWidget> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: hero.listCharacters?.length ?? 0,
                       itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            controller.navigateGotoDetailPage(
-                                context: context,
-                                hero: hero.listCharacters![index]);
-                          },
-                          child: CharacterWidget(
-                            index: index,
-                            listHero: hero.listCharacters ?? [],
-                          ),
+                        return CharacterWidget(
+                          index: index,
+                          listHero: hero.listCharacters ?? [],
                         );
                       },
                     ),
