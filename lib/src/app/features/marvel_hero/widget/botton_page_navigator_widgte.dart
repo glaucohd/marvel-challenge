@@ -43,10 +43,7 @@ class _BottonPageNavigatorWidgetState extends State<BottonPageNavigatorWidget> {
                 i++)
               GestureDetector(
                 onTap: () {
-                  setState(() {
-                    controller.currentPage = i;
-                    controller.getHeroByOffset(numberPage: i);
-                  });
+                  controller.changePage(index: i);
                 },
                 child: Container(
                   height: 40,

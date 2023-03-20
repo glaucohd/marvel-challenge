@@ -143,4 +143,10 @@ class MarvelHeroController extends ChangeNotifier {
     currentPage--;
     notifyListeners();
   }
+
+  void changePage({required int index}) {
+    currentPage = index;
+    getHeroByOffset(numberPage: index);
+    notifyListeners();
+  }
 }
