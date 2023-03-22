@@ -11,7 +11,7 @@ Plus:
 
 Projeto desenvolvido utilizando os padrões de clean arquitetura, SOLID e TDD.
 
-# No aplocativo, utilizei as seguintes libs:
+# No aplicativo, utilizei as seguintes libs:
 
 - crypto: Utilizei para gerar uma hash MD5
 - provider: Utilizei para gerenciamento de estado
