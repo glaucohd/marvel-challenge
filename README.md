@@ -1,16 +1,21 @@
 # marvel_challenge
 
-A new Flutter project.
+O projeto consiste em fazer um aplicativo para listar super heróis utilizando uma API da marvel, https://developer.marvel.com/ e deve conter as seguintes funcionalidades:
 
-## Getting Started
+- Listagem dos super-heróis limitados à 4 itens por página
+- Deve ser possível filtrar os personagens por nome
+- Paginação conforme número de super heróis
 
-This project is a starting point for a Flutter application.
+Plus:
+- Criação de uma tela de detalhes do super herói
 
-A few resources to get you started if this is your first Flutter project:
+Projeto desenvolvido utilizando os padrões de clean arquitetura, SOLID e TDD.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# No aplocativo, utilizei as seguintes libs:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- crypto: Utilizei para gerar uma hash MD5
+- provider: Utilizei para gerenciamento de estado
+- http: Utilizei para conexão com serviço
+- cached_network_image: Utilizei para guardar as imagens dos herois em cache
+- animated_text_kit: Utilizei Utilizei para por um efeito visual na descrição dos heois
+- lottie: Utilizei para por uma animação em json na slpashScreen
