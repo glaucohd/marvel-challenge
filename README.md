@@ -17,5 +17,6 @@ Projeto desenvolvido utilizando os padrões de clean arquitetura, SOLID e TDD.
 - provider: Utilizei para gerenciamento de estado
 - http: Utilizei para conexão com serviço
 - cached_network_image: Utilizei para guardar as imagens dos herois em cache
-- animated_text_kit: Utilizei Utilizei para por um efeito visual na descrição dos heois
+- animated_text_kit: Utilizei para por um efeito visual na descrição dos herois
 - lottie: Utilizei para por uma animação em json na slpashScreen
+- mockito: para os testes unitários
